@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drug-Likeness Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="icon-container">
+                
+            </div>
+            <h1 class="icon-container"><i class="fas fa-flask"></i> Drug-Likeness Predictor</h1>
+            <p class="subtitle-1">Machine Learning-Powered Molecular Analysis for Drug Discovery</p>
+            <p class="subtitle-2">Using Random Forest Classification with RDKit Molecular Descriptors</p>
+        </header>
+        <div class="input-card">
+            <div class="card-header">
+                <h2 class="card-title">Molecule Input</h2>
+                <div class="info-icon" title="Enter a SMILES string to predict drug-likeness properties">
+                    <i class="fas fa-info-circle"></i>
+                </div>
+            </div>
+            <form id="prediction-form">
+                <div class="input-group">
+                    <label for="molecule-name">Molecule Name (Optional)</label>
+                    <input type="text" id="molecule-name" placeholder="e.g., Aspirin, Caffeine">
+                </div>
+
+                <div class="input-group">
+                    <label for="smiles-input">SMILES Notation <span class="required">*</span></label>
+                    <input type="text" id="smiles-input" placeholder="Enter SMILES string" required>
+                </div>
+
+                <button type="submit" class="predict-btn">
+                    <i class="fas fa-search"></i>
+                    Predict All Drug Properties
+                </button>
+            </form>
+        </div>
+        <div class="examples-section">
+            <p class="examples-label">Try Example Molecules:</p>
+            <div class="example-tags">
+                <button class="example-tag" data-smiles="CC(=O)OC1=CC=CC=C1C(=O)O" data-name="Aspirin">Aspirin</button>
+                <button class="example-tag" data-smiles="CN1C=NC2=C1C(=O)N(C(=O)N2C)C" data-name="Caffeine">Caffeine</button>
+                <button class="example-tag" data-smiles="CC(C)CC1=CC=C(C=C1)C(C)C(=O)O" data-name="Ibuprofen">Ibuprofen</button>
+                <button class="example-tag" data-smiles="CC(=O)Nc1ccc(O)cc1" data-name="Paracetamol">Paracetamol</button>
+            </div>
+        </div>
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Analyzing molecule...</p>
+        </div>
+        <div id="error" class="error hidden">
+            <i class="fas fa-exclamation-triangle"></i>
+            <span id="error-message"></span>
+        </div>
+        <div id="suggestions" class="suggestions hidden">
+            <h3>Invalid SMILES string. Did you mean one of these molecules?</h3>
+            <div id="suggestions-list" class="suggestions-list"></div>
+            <p class="hint">Click a suggestion for prediction.</p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

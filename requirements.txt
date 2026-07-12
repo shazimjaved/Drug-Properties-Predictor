@@ -1,0 +1,13 @@
+flask>=2.3.0
+pubchempy>=1.0.4
+pandas>=2.0.0
+numpy>=1.24.0
+scikit-learn>=1.3.0
+joblib>=1.3.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+shap>=0.42.0
+jupyter>=1.0.0
+notebook>=7.0.0
+ipykernel>=6.29.0
+rdkit>=2023.3.0

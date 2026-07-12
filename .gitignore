@@ -1,0 +1,23 @@
+# Data and Reports
+Report.odt
+data.csv
+dataset_info.json
+Charts/
+
+# Python Environments
+venv/
+env/
+.env
+
+# Python Cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter Notebook Cache
+.ipynb_checkpoints/
+
+# OS Files
+.DS_Store
+Thumbs.db

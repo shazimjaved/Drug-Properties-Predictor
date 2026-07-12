@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drug Properties Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="icon-container">
+                <i class="fas fa-flask"></i>
+            </div>
+            <h1 class="main-title">Drug Properties Analysis</h1>
+            <p class="subtitle-1">Complete Molecular Property Assessment</p>
+        </header>
+        <div class="back-section">
+            <a href="/" class="back-btn">
+                <i class="fas fa-arrow-left"></i>
+                Analyze Another Molecule
+            </a>
+        </div>
+        <div class="molecule-info-card">
+            <h2 id="molecule-title">Molecule Analysis</h2>
+            <div class="molecule-details">
+                <div class="smiles-display">
+                    <label>SMILES:</label>
+                    <code id="smiles-display"></code>
+                </div>
+            </div>
+        </div>
+        <div class="results-grid">
+            <div class="result-card">
+                <div class="result-header">
+                    <h3><i class="fas fa-pills"></i> Drug-Likeness</h3>
+                    <div class="prediction-badge" id="drug-likeness-badge">
+                        <span id="drug-likeness-prediction"></span>
+                    </div>
+                </div>
+                <div class="result-content">
+                    <div class="explanation" id="drug-likeness-explanation"></div>
+                    <div class="confidence" id="drug-likeness-confidence"></div>
+                </div>
+            </div>
+            <div class="result-card">
+                <div class="result-header">
+                    <h3><i class="fas fa-tint"></i> Solubility</h3>
+                    <div class="prediction-badge" id="solubility-badge">
+                        <span id="solubility-prediction"></span>
+                    </div>
+                </div>
+                <div class="result-content">
+                    <div class="explanation" id="solubility-explanation"></div>
+                    <div class="confidence" id="solubility-confidence"></div>
+                </div>
+            </div>
+            <div class="result-card">
+                <div class="result-header">
+                    <h3><i class="fas fa-exchange-alt"></i> Permeability</h3>
+                    <div class="prediction-badge" id="permeability-badge">
+                        <span id="permeability-prediction"></span>
+                    </div>
+                </div>
+                <div class="result-content">
+                    <div class="explanation" id="permeability-explanation"></div>
+                    <div class="confidence" id="permeability-confidence"></div>
+                </div>
+            </div>
+            <div class="result-card">
+                <div class="result-header">
+                    <h3><i class="fas fa-shield-alt"></i> Stability</h3>
+                    <div class="prediction-badge" id="stability-badge">
+                        <span id="stability-prediction"></span>
+                    </div>
+                </div>
+                <div class="result-content">
+                    <div class="explanation" id="stability-explanation"></div>
+                    <div class="confidence" id="stability-confidence"></div>
+                </div>
+            </div>
+            <div class="result-card">
+                <div class="result-header">
+                    <h3><i class="fas fa-exclamation-triangle"></i> Toxicity</h3>
+                    <div class="prediction-badge" id="toxicity-badge">
+                        <span id="toxicity-prediction"></span>
+                    </div>
+                </div>
+                <div class="result-content">
+                    <div class="explanation" id="toxicity-explanation"></div>
+                    <div class="confidence" id="toxicity-confidence"></div>
+                </div>
+            </div>
+        </div>
+        <div class="summary-card">
+            <h2>Overall Assessment</h2>
+            <div class="summary-content" id="summary-content">
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/results.js') }}"></script>
+</body>
+</html>
